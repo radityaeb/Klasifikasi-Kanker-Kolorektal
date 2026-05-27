@@ -34,8 +34,17 @@ def classify_image(image):
     img_array = np.expand_dims(img_array, axis=0)
 
     predictions = model.predict(img_array)
-    max_index = np.argmax(predictions[0])
-    return labels[max_index], predictions[0][max_index]
+    probabilitas_kanker = float(predictions[0][0])
+
+    if probabilitas_kanker > 0.5:
+        kelas_prediksi = 'kanker'
+        skor_keyakinan = probabilitas_kanker  
+    else:
+        kelas_prediksi = 'normal'
+        skor_keyakinan = 1.0 - probabilitas_kanker
+        
+    # max_index = np.argmax(predictions[0])
+    return kelas_prediksi, skor_keyakinan
 
 
 st.title("Klasifikasi Histopatologi Kanker Usus Besar")
