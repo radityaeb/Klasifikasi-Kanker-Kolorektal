@@ -36,7 +36,7 @@ def classify_image(image):
     predictions = model.predict(img_array)
     probability = float(predictions[0][0])
 
-    if probabilitas_kanker > 0.5:
+    if probability > 0.5:
         kelas_prediksi = 'normal'
         skor_keyakinan = probability  
     else:
