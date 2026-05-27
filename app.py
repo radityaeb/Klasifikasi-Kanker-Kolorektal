@@ -29,7 +29,7 @@ def classify_image(image):
     image = image.convert("RGB")
 
     cropped_image = crop_image(image)
-    img = cropped_image.resize((224, 224))
+    img = cropped_image.resize((128, 128))
     img_array = np.array(img) / 255.0
     img_array = np.expand_dims(img_array, axis=0)
 
