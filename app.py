@@ -5,7 +5,9 @@ import numpy as np
 from PIL import Image
 
 try:
-    model = load_model("colon_test0.keras")
+    model = load_model("colon1conv.keras")
+    # model = load_model("colon_test0.keras")
+    
 
 except Exception as e:
     st.error(f"Gagal memuat model: {e}")
