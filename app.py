@@ -5,8 +5,8 @@ import numpy as np
 from PIL import Image
 
 try:
-    model = load_model("colon1batchnormm.keras")
-    # model = load_model("colon1conv.keras")
+    # model = load_model("colon1batchnormm.keras")
+    model = load_model("colon1conv.keras")
     # model = load_model("colon_test0.keras")
     
 
