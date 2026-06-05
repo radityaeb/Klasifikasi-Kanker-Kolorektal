@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 try:
-    model = load_model("colon_model2.keras")
+    model = load_model("colon_test0.keras")
 
 except Exception as e:
     st.error(f"Gagal memuat model: {e}")
@@ -37,10 +37,10 @@ def classify_image(image):
     probability = float(predictions[0][0])
 
     if probability > 0.5:
-        kelas_prediksi = 'normal'
+        kelas_prediksi = 'kanker'
         skor_keyakinan = probability  
     else:
-        kelas_prediksi = 'kanker'
+        kelas_prediksi = 'normal'
         skor_keyakinan = 1.0 - probability
         
     # max_index = np.argmax(predictions[0])
