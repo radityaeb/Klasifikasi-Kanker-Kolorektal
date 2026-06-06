@@ -40,14 +40,14 @@ def classify_image(image):
     probability = float(predictions[0][0])
 
     if probability > 0.5:
-        kelas_prediksi = 'kanker'
-        skor_keyakinan = probability  
+        predicted_class = 'kanker'
+        confidence = probability  
     else:
-        kelas_prediksi = 'normal'
-        skor_keyakinan = 1.0 - probability
+        predicted_class = 'normal'
+        confidence = 1.0 - probability
         
     # max_index = np.argmax(predictions[0])
-    return kelas_prediksi, skor_keyakinan
+    return predicted_class, confidence
 
 
 st.title("Klasifikasi Histopatologi Kanker Usus Besar")
