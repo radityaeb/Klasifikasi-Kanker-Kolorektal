@@ -6,7 +6,7 @@ from PIL import Image
 
 try:
     # model = load_model("colon1batchnormm.keras")
-    model = load_model("colon_model.keras")
+    model = load_model("colonnn.keras")
     # model = load_model("colon1conv.keras")
     # ^ malignant 1.0
     # model = load_model("colon2conv.keras")
@@ -44,10 +44,10 @@ def classify_image(image):
     probability = float(predictions[0][0])
 
     if probability > 0.5:
-        predicted_class = 'kanker'
+        predicted_class = 'normal'
         confidence = probability  
     else:
-        predicted_class = 'normal'
+        predicted_class = 'kanker'
         confidence = 1.0 - probability
         
     # max_index = np.argmax(predictions[0])
